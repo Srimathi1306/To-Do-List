@@ -1,25 +1,30 @@
 # To-Do-List
 A responsive to-do list web application using React and Tailwind CSS. It allows users to add, edit, delete and mark tasks as completed, helping to manage the daily tasks efficiently.
 
-## Features
+✨ Features
+Add new tasks
 
-- Add new tasks  
-- Edit existing tasks  
-- Delete tasks  
-- Mark tasks as completed  
+Edit existing tasks
 
-## Technologies Used
+Delete tasks
 
-- React  
-- Tailwind CSS  
+Mark tasks as completed
 
-## Getting Started
+🛠 Technologies Used
+React – Frontend library for building UI
 
-```bash
+Tailwind CSS – Utility-first CSS framework for styling
+
+🚀 Getting Started
+Follow these steps to set up the project locally:
+
+bash
+Copy
+Edit
 # Clone the repository
 git clone https://github.com/your-username/todo-list.git
 
-# Go into the project directory
+# Navigate to the project directory
 cd todo-list
 
 # Install dependencies
