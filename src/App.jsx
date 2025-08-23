@@ -4,7 +4,9 @@ export default function App() {
   return (
     <div className="list-box">
       <Header />
-      <List />
+      <div className="flex justify-center align-center m-8 p-4">
+        <List />
+      </div>
     </div>
   );
 }
