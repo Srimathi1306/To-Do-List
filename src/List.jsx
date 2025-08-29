@@ -2,11 +2,22 @@ import { useState } from "react";
 export default function List() {
   const [inputValue, setInputValue] = useState(""); // state to store input
   const [list, setList] = useState([]); // state to store all items
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault(); // prevents page reload
+    if (inputValue.trim() === "") return; // avoid empty inputs
+    setList([...list, inputValue]); // add new item to list
+    setInputValue(""); // clear input after submit
+  };
+
   return (
     <div>
-      <form className="m-8 flex gap-4">
+      <form onSubmit={handleSubmit} className="m-8 flex gap-4">
         <input
           type="text"
+          value={inputValue} // controlled input
+          onChange={(e) => setInputValue(e.target.value)} // update state
           placeholder="Add to list"
           className="border hover:border-blue-500 hover:border-3 rounded-lg"
         />
