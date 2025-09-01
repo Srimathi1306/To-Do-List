@@ -32,6 +32,16 @@ export default function List() {
           Add List
         </button>
       </form>
+      <ul className="m-8 space-y-2">
+        {list.map((item, index) => (
+          <li
+            key={index}
+            className="px-4 py-2 bg-gray-100 rounded-lg shadow-sm flex justify-between items-center"
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
