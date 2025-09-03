@@ -10,6 +10,11 @@ export default function List() {
     setList([...list, inputValue]); // add new item to list
     setInputValue(""); // clear input after submit
   };
+  // Handle delete
+  const handleDelete = (index) => {
+    const updatedList = list.filter((_, i) => i !== index); // remove by index
+    setList(updatedList);
+  };
 
   return (
     <div>
@@ -38,7 +43,15 @@ export default function List() {
             key={index}
             className="px-4 py-2 bg-gray-100 rounded-lg shadow-sm flex justify-between items-center"
           >
-            {item}
+            <span className="text-lg">{item}</span>
+            <button
+              onClick={() => handleDelete(index)}
+              className="text-red-500 hover:text-red-700 transition-transform duration-200 ease-in-out hover:scale-110"
+            >
+              <p className="text-red-500 hover:text-red-700 text-xl font-bold">
+                ✕
+              </p>
+            </button>
           </li>
         ))}
       </ul>
