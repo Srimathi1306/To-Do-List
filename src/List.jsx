@@ -15,6 +15,10 @@ export default function List() {
     const updatedList = list.filter((_, i) => i !== index); // remove by index
     setList(updatedList);
   };
+  const handleEdit = (index) => {
+    setInputValue(list[index].text); // load item into input
+    setEditIndex(index); // set index to edit mode
+  };
 
   return (
     <div>
@@ -44,6 +48,12 @@ export default function List() {
             className="px-4 py-2 bg-gray-100 rounded-lg shadow-sm flex justify-between items-center"
           >
             <span className="text-lg">{item}</span>
+            <button
+              onClick={() => handleEdit(index)}
+              className="text-blue-500 hover:text-blue-700"
+            >
+              Edit
+            </button>
             <button
               onClick={() => handleDelete(index)}
               className="text-red-500 hover:text-red-700 transition-transform duration-200 ease-in-out hover:scale-110"
